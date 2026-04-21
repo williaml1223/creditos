@@ -3,276 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BanCredit | Créditos Institucionales</title>
+    <title>BanCredit | Banca Institucional Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav>
-    <div class="logo">BanCredit</div>
-    <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="https://wa.me/525566824358?text=Hola,%20estoy%20interesado%20en%20postularme%20para%20la%20vacante%20de%20trabajo" target="_blank">Bolsa de Empleo</a></li>
-        <li><a href="#" class="btn-solicitar">Solicitar Crédito</a></li>
-    </ul>
-</nav>
-<section class="hero">
-    <h1>Soluciones Financieras a tu Medida</h1>
-    <div class="targets-container">
-        <div class="card" onclick="openModal('modal-policia')">
-            <div class="badge">Más Información</div>
-            <h2>Policía y Fuerzas</h2>
-            <p><strong>Línea de Honor:</strong> Beneficios exclusivos para servidores públicos activos.</p>
-        </div>
-
-        <div class="card" onclick="openModal('modal-profesor')">
-            <div class="badge">Más Información</div>
-            <h2>Cuerpo Docente</h2>
-            <p><strong>Plan Magisterio:</strong> Tasas preferenciales para educadores.</p>
-        </div>
-
-        <div class="card" onclick="openModal('modal-pensionado')">
-            <div class="badge">Más Información</div>
-            <h2>Pensionados</h2>
-            <p><strong>Oro Retiro:</strong> Créditos ajustados a tu mesada pensional.</p>
-        </div>
-    </div>
-</section>
-
-<div id="modal-policia" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-policia')">&times;</span>
-        <h2>Beneficios Policía</h2>
-        <ul>
-            <li>Aprobación en 24 horas.</li>
-            <li>Sin codeudor institucional.</li>
-            <li>Tasa fija durante todo el crédito.</li>
+    <nav class="navbar">
+        <div class="logo">BanCredit</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Simulador</a></li>
+            <li><a href="#faq">Ayuda</a></li>
+            <li><a href="https://wa.me/584121234567" target="_blank" class="btn-empleo">Bolsa de Empleo</a></li>
         </ul>
-        <h3>Requisitos</h3>
-        <p>Cédula y 2 últimos desprendibles.</p>
-    </div>
-</div>
+    </nav>
 
-<div id="modal-profesor" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
-        <h2>Beneficios Docentes</h2>
-        <ul>
-            <li>Libranza con cuota moderada.</li>
-            <li>Plazos hasta 96 meses.</li>
-        </ul>
-        <h3>Requisitos</h3>
-        <p>Certificado laboral y últimos pagos.</p>
-    </div>
-</div>
-
-<div id="modal-pensionado" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
-        <h2>Beneficios Pensionados</h2>
-        <ul>
-            <li>Edad hasta los 85 años para crédito.</li>
-            <li>Seguro de vida incluido.</li>
-            <li>Descuento directo de la mesada.</li>
-        </ul>
-        <h3>Requisitos</h3>
-        <p>Resolución de pensión y últimos 2 pagos.</p>
-    </div>
-</div>
-
-   <section class="calculator-section" id="servicios">
-    <div class="calculator-card">
-        <div class="calculator-header">
-            <h2>Simulador de Cuota Mensual</h2>
-            <p>Obtén una estimación instantánea según tu perfil profesional</p>
+    <header class="hero" id="inicio">
+        <h1>Créditos para quienes mueven al país</h1>
+        <p class="hero-sub">Selecciona tu perfil para ver beneficios exclusivos</p>
+        
+        <div class="targets-container">
+            <div class="card" onclick="openModal('modal-policia')">
+                <div class="badge">Seguridad</div>
+                <h2>Línea de Honor</h2>
+                <p>Aprobación inmediata y tasas preferenciales para servidores de la ley.</p>
+                <span class="more-info">+ Ver requisitos</span>
+            </div>
+            <div class="card" onclick="openModal('modal-profesor')">
+                <div class="badge">Educación</div>
+                <h2>Plan Magisterio</h2>
+                <p>Financiamos tus metas con descuento directo de nómina para docentes.</p>
+                <span class="more-info">+ Ver requisitos</span>
+            </div>
+            <div class="card" onclick="openModal('modal-pensionado')">
+                <div class="badge">Retiro</div>
+                <h2>Oro Retiro</h2>
+                <p>Préstamos ajustados a tu mesada pensional hasta los 85 años de edad.</p>
+                <span class="more-info">+ Ver requisitos</span>
+            </div>
         </div>
+    </header>
 
-        <div class="simulation-engine">
+    <section class="calculator-section" id="servicios">
+        <div class="calculator-card">
+            <h2>Simulador de Crédito</h2>
             <div class="input-wrapper">
-                <label for="monto">¿Qué monto deseas solicitar?</label>
+                <label>¿Cuánto dinero necesitas?</label>
                 <div class="currency-input">
-                    <span class="currency-symbol">$</span>
-                    <input type="number" id="monto" value="1000000" oninput="updateCalc()" placeholder="0">
+                    <span class="symbol">$</span>
+                    <input type="number" id="monto" value="1000000" oninput="updateCalc()" aria-label="Monto del crédito">
                 </div>
             </div>
-
-            <div class="table-responsive">
+            <div class="table-container">
                 <table class="premium-table">
                     <thead>
                         <tr>
-                            <th>Perfil Institucional</th>
-                            <th>Tasa Preferencial</th>
+                            <th>Perfil de Cliente</th>
                             <th>Cuota Mensual</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="profile-col">
-                                <span class="badge">Seguridad</span>
-                                <strong>Policía y Fuerzas Públicas</strong>
-                            </td>
-                            <td class="rate-col">1.2% Mes</td>
-                            <td id="cuota-poli" class="amount-col">$ 0</td>
-                        </tr>
-                        <tr>
-                            <td class="profile-col">
-                                <span class="badge">Educación</span>
-                                <strong>Docentes y Profesores</strong>
-                            </td>
-                            <td class="rate-col">1.1% Mes</td>
-                            <td id="cuota-prof" class="amount-col">$ 0</td>
-                        </tr>
-                        <tr>
-                            <td class="profile-col">
-                                <span class="badge">Retiro</span>
-                                <strong>Pensionados</strong>
-                            </td>
-                            <td class="rate-col">0.9% Mes</td>
-                            <td id="cuota-pension" class="amount-col">$ 0</td>
-                        </tr>
+                        <tr><td>Seguridad</td><td id="res-poli" class="res-val">$ 0</td></tr>
+                        <tr><td>Docentes</td><td id="res-prof" class="res-val">$ 0</td></tr>
+                        <tr><td>Pensionados</td><td id="res-pension" class="res-val">$ 0</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="disclaimer">*Sujeto a estudio de crédito y capacidad de endeudamiento.</p>
         </div>
-    </div>
-</section>
-<section class="faq-section" id="faq">
-    <div class="faq-container">
+    </section>
+
+    <section class="faq-section" id="faq">
         <div class="faq-header">
-            <span class="badge">Soporte</span>
+            <span class="badge-blue">SOPORTE</span>
             <h2>Centro de Ayuda</h2>
             <p>Resolvemos tus dudas de manera clara y transparente</p>
         </div>
 
-        <div class="faq-grid">
-            <div class="faq-card">
-                <div class="faq-question">
-                    <h3>¿Puedo solicitar un crédito si tengo otros préstamos activos?</h3>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí. Realizamos un estudio de tu capacidad de endeudamiento actual. Si tu margen de descuento por nómina lo permite, podemos unificar tus deudas o brindarte liquidez adicional.</p>
-                </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>¿Cuánto tiempo demora el proceso de desembolso?</h3>
+                <p>Contamos con procesos automatizados. Una vez aprobada la documentación, el desembolso se realiza en un plazo de 24 a 48 horas directamente a tu cuenta bancaria.</p>
             </div>
-
-            <div class="faq-card">
-                <div class="faq-question">
-                    <h3>¿Cuánto tiempo demora el proceso de desembolso?</h3>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>Contamos con procesos automatizados. Una vez radicada y aprobada la documentación, el desembolso se realiza en un plazo de 24 a 48 horas directamente a tu cuenta bancaria.</p>
-                </div>
-            </div>
-
-            <div class="faq-card">
-                <div class="faq-question">
-                    <h3>¿Qué requisitos mínimos debo cumplir?</h3>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>Solo necesitas ser funcionario público activo (Policía, Docente, Burocracia) o Pensionado, presentar tu cédula de identidad y los dos últimos desprendibles de pago.</p>
-                </div>
-            </div>
-
-            <div class="faq-card">
-                <div class="faq-question">
-                    <h3>¿Existen costos ocultos o seguros adicionales?</h3>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>En BanCredit la transparencia es prioridad. Todas nuestras tasas y seguros obligatorios de ley se informan desde la simulación inicial. Sin sorpresas al final del proceso.</p>
-                </div>
+            <div class="faq-item">
+                <h3>¿Puedo solicitarlo si tengo otros préstamos activos?</h3>
+                <p>Sí. Realizamos un estudio de tu capacidad de endeudamiento actual. Si tu margen de nómina lo permite, brindamos liquidez adicional.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <div id="recruit-popup">
-        <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
-        <strong>¡Únete a nuestro equipo!</strong>
-        <p>Buscamos expertos en ventas para nuestra banca institucional.</p>
-        <button class="btn-vacantes">Ver vacantes</button>
-    </div>
-
-   <footer class="main-footer">
-    <div class="footer-cta">
-        <h2>¿Listo para dar el siguiente paso?</h2>
-        <p>Nuestro equipo de asesores está disponible para guiarte en tu solicitud.</p>
-    </div>
-
-    <div class="footer-container">
-        <div class="footer-info">
-            <div class="logo">BanCredit</div>
-            <p>Soluciones financieras seguras para servidores públicos y pensionados.</p>
+    <footer class="main-footer">
+        <div class="contact-icons">
+            <a href="tel:+584121234567" class="contact-link">
+                <div class="icon-circle">☏</div>
+                <p>Llamar</p>
+            </a>
+            <a href="https://wa.me/584121234567" target="_blank" class="contact-link">
+                <div class="icon-circle highlight">💬</div>
+                <p>WhatsApp</p>
+            </a>
         </div>
+        <p class="copy">&copy; 2026 BanCredit Institucional.</p>
+    </footer>
 
-        <div class="footer-contact-grid">
-            <div class="contact-card">
-                <div class="icon-wrapper">☏</div>
-                <div class="contact-text">
-                    <span>Línea Gratuita</span>
-                </div>
-            </div>
-            <a href="mailto:contacto@bancredit.com ?subject=Solicitud%20de%20Información%20Crédito" class="contact-card">
-    <div class="icon-wrapper">✉</div>
-    <div class="contact-text">
-        <span>Correo Soporte</span>
-    </div>
-</a>
-            <div class="contact-card">
-                <div class="icon-wrapper">💬</div>
-                <div class="contact-text">
-                    <a href="https://wa.me/525566824358?text=Hola,%20deseo%20información%20sobre%20los%20créditos" target="_blank" class="contact-card">
-        
-    </div>
-</a>
-                    
-                </div>
-            </div>
+    <div id="modal-policia" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-policia')">&times;</span>
+            <h2>Beneficios Seguridad</h2>
+            <p>Acceso a tasas desde el 1.2% E.A. y plazos flexibles.</p>
         </div>
     </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 BanCredit Institucional. Todos los derechos reservados. Vigilado por la Superintendencia Financiera.</p>
-    </div>
-</footer>
 
     <script>
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        
         function updateCalc() {
-            let val = document.getElementById('monto').value;
-            const format = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
-            
-            if (val > 0) {
-                document.getElementById('cuota-poli').innerText = format.format(val * 0.045); 
-                document.getElementById('cuota-prof').innerText = format.format(val * 0.042);
-                document.getElementById('cuota-pension').innerText = format.format(val * 0.038);
+            const monto = document.getElementById('monto').value;
+            const fmt = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+            if (monto > 0) {
+                document.getElementById('res-poli').innerText = fmt.format(monto * 0.045);
+                document.getElementById('res-prof').innerText = fmt.format(monto * 0.042);
+                document.getElementById('res-pension').innerText = fmt.format(monto * 0.038);
             } else {
-                document.querySelectorAll('.result-cell').forEach(td => td.innerText = "$ 0");
+                document.querySelectorAll('.res-val').forEach(el => el.innerText = "$ 0");
             }
         }
         window.onload = updateCalc;
     </script>
-    <script>
-    function openModal(id) {
-        const modal = document.getElementById(id);
-        if(modal) modal.style.display = "flex";
-    }
-
-    function closeModal(id) {
-        const modal = document.getElementById(id);
-        if(modal) modal.style.display = "none";
-    }
-
-    // Cerrar al hacer clic fuera del cuadro blanco
-    window.onclick = function(event) {
-        if (event.target.className === 'modal') {
-            event.target.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>
