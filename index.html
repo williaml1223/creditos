@@ -17,29 +17,29 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Simulador</a></li>
             <li><a href="#faq">Ayuda</a></li>
-            <li><a href="https://wa.me/584121234567" target="_blank" class="btn-empleo">Bolsa de Empleo</a></li>
+            <li><a href="#reclutamiento" class="btn-empleo">Bolsa de Empleo</a></li>
         </ul>
     </nav>
 
     <header class="hero" id="inicio">
-        <h1>Créditos para quienes mueven al país</h1>
-        <p class="hero-sub">Selecciona tu perfil para ver beneficios exclusivos</p>
+        <h1>Créditos inmediatos para quienes mueven al país</h1>
+        <p class="hero-sub">Selecciona tu perfil para ver requisitos o contactanos por beneficios</p>
         
         <div class="targets-container">
             <div class="card" onclick="openModal('modal-policia')">
-                <div class="badge">Seguridad</div>
+                <div class="badge">Gobierno del Estado de México</div>
                 <h2>Línea de Honor</h2>
-                <p>Aprobación inmediata y tasas preferenciales para servidores de la ley.</p>
+                <p>Aprobación inmediata y tasas preferenciales para servidores públicos.</p>
                 <span class="more-info">+ Ver requisitos</span>
             </div>
             <div class="card" onclick="openModal('modal-profesor')">
-                <div class="badge">Educación</div>
-                <h2>Plan Magisterio</h2>
+                <div class="badge">SNTE- Educación SNTE</div>
+                <h2>Plan Sindical</h2>
                 <p>Financiamos tus metas con descuento directo de nómina para docentes.</p>
                 <span class="more-info">+ Ver requisitos</span>
             </div>
             <div class="card" onclick="openModal('modal-pensionado')">
-                <div class="badge">Retiro</div>
+                <div class="badge">IMSS pensionados y jubilados</div>
                 <h2>Oro Retiro</h2>
                 <p>Préstamos ajustados a tu mesada pensional hasta los 85 años de edad.</p>
                 <span class="more-info">+ Ver requisitos</span>
@@ -47,53 +47,133 @@
         </div>
     </header>
 
-    <section class="calculator-section" id="servicios">
-        <div class="calculator-card">
-            <h2>Simulador de Crédito</h2>
-            <div class="input-wrapper">
-                <label>¿Cuánto dinero necesitas?</label>
-                <div class="currency-input">
-                    <span class="symbol">$</span>
-                    <input type="number" id="monto" value="1000000" oninput="updateCalc()" aria-label="Monto del crédito">
+   
+
+      <section class="calculator-section" id="servicios">
+    <div class="calculator-card">
+        <h2>Simulador de Crédito</h2>
+        
+        <div class="input-wrapper">
+            <label>Monto a solicitar:</label>
+            <div class="currency-input">
+                <span>$</span>
+                <input type="number" id="monto" placeholder="Ej: 50000" oninput="updateCalc()">
+            </div>
+        </div>
+
+        <div class="table-container">
+           <table class="premium-table">
+    <thead>
+        <tr>
+            <th>Perfil del Cliente</th>
+            <th>Tasa Anual</th>
+            <th>CAT Promedio</th>
+            <th>Pago Mensual</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sector Salud / Policía (GOBMEX)</td>
+            <td>36.00%</td>
+            <td id="cat-poli">44.1%</td>
+            <td id="res-poli" class="res-val">$ 0</td>
+        </tr>
+        <tr>
+            <td>Educación (SNTE)</td>
+            <td>53.54%</td>
+            <td id="cat-prof">71.2%</td>
+            <td id="res-prof" class="res-val">$ 0</td>
+        </tr>
+        <tr>
+            <td>Pensionados IMSS</td>
+            <td>32.00%</td>
+            <td id="cat-pension">37.1%</td>
+            <td id="res-pension" class="res-val">$ 0</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="legal-footer">
+    <p><small><Strong>*CAT (Costo Anual Total)</Strong> informativo para fines de comparación. Datos calculados a un plazo de 24 meses según folletos vigentes de BanCredit.</small></p>
+</div>
+        <div class="legal-footer">
+            <p><strong>* Información Legal:</strong> Tasa de interés ordinaria anual fija. CAT promedio informativo sin IVA. No aplica comisión por apertura ni administración.</p>
+            <p><strong>* Condiciones:</strong> Sujeto a aprobación de crédito. Los plazos y tasas pueden variar según el convenio específico.</p>
+        </div>
+    </div>
+</section>
+    <section id="faq" class="faq-section">
+        <div class="faq-header">
+            <span class="badge-blue">CENTRO DE AYUDA</span>
+            <h2>Preguntas Frecuentes</h2>
+            <p>Todo lo que necesitas saber sobre nuestros créditos institucionales</p>
+        </div>
+
+     <div class="faq-container">
+            <div class="faq-card">
+        <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>¿En cuánto tiempo recibo mi efectivo?</h3>
+        <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+        <p>Una vez aprobada tu solicitud, el depósito se refleja en un máximo de 24 horas directamente en tu cuenta de nómina o pensión.</p>
+        </div>
+</div>
+  <div class="faq-card"> <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>¿Puedo solicitar un nuevo credito, si ya tengo otros prestamos activos?</h3>
+        <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Por supuesto. Realizamos un estudio de tu capacidad actual. Si tu margen de nómina lo permite, brindamos liquidez adicional.</p>
+    </div>
+</div>
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Puedo liquidar mi crédito anticipadamente o adelantar pagos?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>¡Sí! Estamos para servirte y brindarte todo el apoyo que necesitas, puedes comunicarte con nuestro soporte para que orienten.</p>
                 </div>
             </div>
-            <div class="table-container">
-                <table class="premium-table">
-                    <thead>
-                        <tr>
-                            <th>Perfil de Cliente</th>
-                            <th>Cuota Mensual</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Seguridad</td><td id="res-poli" class="res-val">$ 0</td></tr>
-                        <tr><td>Docentes</td><td id="res-prof" class="res-val">$ 0</td></tr>
-                        <tr><td>Pensionados</td><td id="res-pension" class="res-val">$ 0</td></tr>
-                    </tbody>
-                </table>
+
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Dan créditos a clientes en toda la república?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, contamos con procesos automatizados que nos permiten realizar el trámite a distancia de manera digital.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Qué debo hacer para saber si puedo obtener un refinanciamiento?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sólo tienes que enviarnos tu recibo de nómina y nosotros validamos si eres viable para un refinanciamiento.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="faq-section" id="faq">
-        <div class="faq-header">
-            <span class="badge-blue">SOPORTE</span>
-            <h2>Centro de Ayuda</h2>
-            <p>Resolvemos tus dudas de manera clara y transparente</p>
-        </div>
 
-        <div class="faq-container">
-            <div class="faq-item">
-                <h3>¿Cuánto tiempo demora el proceso de desembolso?</h3>
-                <p>Contamos con procesos automatizados. Una vez aprobada la documentación, el desembolso se realiza en un plazo de 24 a 48 horas directamente a tu cuenta bancaria.</p>
-            </div>
-            <div class="faq-item">
-                <h3>¿Puedo solicitarlo si tengo otros préstamos activos?</h3>
-                <p>Sí. Realizamos un estudio de tu capacidad de endeudamiento actual. Si tu margen de nómina lo permite, brindamos liquidez adicional.</p>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Función para el acordeón de FAQ
+        function toggleFaq(element) {
+            const card = element.parentElement;
+            const icon = element.querySelector('.faq-icon');
+            
+            // Cerrar otros si se desea (opcional)
+            // document.querySelectorAll('.faq-card').forEach(c => { if(c !== card) c.classList.remove('active'); });
 
+            card.classList.toggle('active');
+            icon.textContent = card.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+    
     <footer class="main-footer">
         <div class="contact-icons">
             <a href="tel:+584121234567" class="contact-link">
@@ -111,43 +191,65 @@
    <div id="modal-policia" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-policia')">&times;</span>
-            <h2>Beneficios Seguridad</h2>
-            <p>Acceso a tasas desde el 1.2% E.A. y plazos flexibles.</p>
+            <h2>Requisitos Gobierno del Estado de Mexico</h2>
+            <p><li>INE</li><li>Dos recibos de nómina</li> <li>Estado de cuenta bancario</li></p>
         </div>
     </div>
 
     <div id="modal-profesor" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
-            <h2>Beneficios Educación</h2>
-            <p>Tasas preferenciales del 1.1% E.A. y convenios para docentes.</p>
+            <h2>Requisitos SNTE</h2>
+            <p><li>Recibo de Nomina</li>
+            <li>INE</li></p>
         </div>
     </div>
 
     <div id="modal-pensionado" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
-            <h2>Beneficios Pensionados</h2>
-            <p>Créditos por libranza hasta los 85 años de edad.</p>
+            <h2>Requisitos IMSS pensionados y jubilados </h2>
+            <p><li>INE</li>
+            <li>Correo Electronico</li>
+            <li>Estado de Cuenta Bancario</li></p>
         </div>
     </div>
 
-    <script>
-        function openModal(id) { document.getElementById(id).style.display = "flex"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    
+
+<script>
+function updateCalc() {
+    const montoInput = document.getElementById('monto').value;
+    const monto = parseFloat(montoInput);
+    
+    const fmt = new Intl.NumberFormat('es-MX', { 
+        style: 'currency', 
+        currency: 'MXN', 
+        minimumFractionDigits: 0 
+    });
+
+    if (monto > 0) {
+        // FACTORES DE PAGO EXTRAÍDOS DE LOS PDF (Plazo 24 meses / 48 quincenas)
+        // GOBMEX: Pago $154.51 quincenal por cada $10,000 -> Factor mensual: 0.0309
+        const cuotaPoli = monto * 0.0309; 
         
-        function updateCalc() {
-            const monto = document.getElementById('monto').value;
-            const fmt = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
-            if (monto > 0) {
-                document.getElementById('res-poli').innerText = fmt.format(monto * 0.045);
-                document.getElementById('res-prof').innerText = fmt.format(monto * 0.042);
-                document.getElementById('res-pension').innerText = fmt.format(monto * 0.038);
-            } else {
-                document.querySelectorAll('.res-val').forEach(el => el.innerText = "$ 0");
-            }
-        }
-        window.onload = updateCalc;
-    </script>
+        // SNTE: Pago quincenal aprox $277 por cada $10,000 -> Factor mensual: 0.0554
+        const cuotaProf = monto * 0.0554;
+        
+        // IMSS: Pago mensual $464.47 por cada $10,000 -> Factor mensual: 0.0464
+        const cuotaPension = monto * 0.0464;
+
+        // Inyectar resultados en la tabla
+        document.getElementById('res-poli').innerText = fmt.format(cuotaPoli);
+        document.getElementById('res-prof').innerText = fmt.format(cuotaProf);
+        document.getElementById('res-pension').innerText = fmt.format(cuotaPension);
+        
+    } else {
+        document.getElementById('res-poli').innerText = "$ 0";
+        document.getElementById('res-prof').innerText = "$ 0";
+        document.getElementById('res-pension').innerText = "$ 0";
+    }
+}
+</script>
 </body>
 </html>

@@ -6,12 +6,11 @@
     --gris-suave: #f8fafc;
 }
 
-/* RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 html { scroll-behavior: smooth; }
-body { background: var(--blanco); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { background: var(--blanco); overflow-x: hidden; }
 
-/* NAVBAR RESPONSIVA */
+/* NAVBAR */
 .navbar {
     background: var(--azul-bancario);
     padding: 1rem 5%;
@@ -26,86 +25,193 @@ body { background: var(--blanco); overflow-x: hidden; -webkit-font-smoothing: an
 .nav-links a { color: white; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
 .btn-empleo { background: var(--azul-electrico); padding: 8px 15px; border-radius: 5px; }
 
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Optimización para carga móvil */
-}
-
-/* HERO (ESTILO IMAGEN 1) */
+/* HERO */
 .hero {
-    padding: clamp(60px, 10vw, 100px) 5%;
+    padding: 100px 5%;
     text-align: center;
     background: radial-gradient(circle at center, var(--azul-brillante) 0%, var(--azul-bancario) 100%);
     color: white;
 }
-.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 40px; letter-spacing: -1px; }
-
-.targets-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    color: #1a2a40;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
+.hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 40px; }
+.targets-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 1200px; margin: 0 auto; }
+.card { background: white; padding: 30px; border-radius: 20px; color: #1a2a40; cursor: pointer; transition: 0.3s; width: 300px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
 .card:hover { transform: translateY(-10px); }
-.card .badge { background: #eef4ff; color: var(--azul-electrico); padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 900; margin-bottom: 15px; display: inline-block; }
+.card .badge { background: #eef4ff; color: var(--azul-electrico); padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 900; margin-bottom: 10px; display: inline-block; }
 
-/* SIMULADOR */
-.calculator-section { padding: 80px 5%; margin-top: -60px; }
-.calculator-card { background: var(--gris-suave); padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0; max-width: 800px; margin: 0 auto; text-align: center; }
-#monto { width: 100%; max-width: 350px; padding: 15px; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 900; border-radius: 10px; border: 2px solid var(--azul-bancario); margin-top: 15px; text-align: center; }
+/* --- SECCIÓN FAQ --- */
+.faq-header{
+text-align: center;margin-bottom: 50px;color: var(--azul-bancario);}
+.badge-blue{background: #eef4ff;color: var(--azul-electrico);padding: 5px 15px;border-radius: 50px;font-size: 0.7rem;font-weight: 900;display: inline-block;}
+.faq-section {padding: 80px 5%;background-color: var(--gris-suave);display: flex;flex-direction: column;align-items: center;}
 
-.premium-table { width: 100%; margin-top: 30px; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
-.premium-table th { background: var(--azul-bancario); color: white; padding: 15px; text-align: left; }
-.premium-table td { padding: 15px; border-bottom: 1px solid #f1f5f9; font-weight: 700; text-align: left; }
-.res-val { color: var(--azul-electrico); text-align: right !important; }
-
-/* FAQ (ESTILO IMAGEN 2) */
-.faq-section { padding: 80px 5%; text-align: center; }
-.badge-blue { background: #eef4ff; color: var(--azul-electrico); padding: 5px 15px; border-radius: 8px; font-weight: 900; font-size: 0.75rem; margin-bottom: 15px; display: inline-block; }
-.faq-container { max-width: 800px; margin: 40px auto; display: flex; flex-direction: column; gap: 15px; }
-
-.faq-item {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 15px;
-    padding: 25px;
-    text-align: left;
-    transition: 0.3s;
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;
+    width: 100%;
+    max-width: 850px; /* Tamaño unificado para todos los cuadros */
+    margin: 40px auto;
 }
-.faq-item:hover { border-color: var(--azul-electrico); }
-.faq-item h3 { font-size: 1.1rem; color: #1a2a40; display: flex; justify-content: space-between; align-items: center; }
-.faq-item h3::after { content: '+'; color: var(--azul-electrico); font-weight: 900; font-size: 1.4rem; }
 
-/* FOOTER */
-.main-footer { background: var(--azul-bancario); padding: 40px 5%; color: white; text-align: center; }
-.contact-icons { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+.faq-card {width: 100%;background: white;border: 1px solid #e2e8f0;border-radius: 12px;overflow: hidden;transition: all 0.3s ease;box-shadow: 0 4px 6px rgba(0,0,0,0.02);}
+
+/* ESTADO ABIERTO / ACTIVO */
+.faq-card.active {border-color: var(--azul-electrico);box-shadow: 0 10px 20px rgba(10, 42, 91, 0.08);}
+
+.faq-card.active .faq-question {background-color: #f0f7ff; /* Azul muy suave que combina con la paleta */}
+
+.faq-question {background-color: white;padding: 22px 25px;display: flex;justify-content: space-between;align-items: center;cursor: pointer;user-select: none;min-height: 80px; /* Altura mínima para que todas las cajas se vean iguales */}
+
+.faq-question h3 {font-size: 1.05rem;color: var(--azul-bancario);font-weight: 700;}
+
+.faq-icon {font-size: 1.5rem;color: var(--azul-electrico);font-weight: bold;transition: 0.3s;}
+
+.faq-answer {max-height: 0;overflow: hidden;transition: max-height 0.3s ease-out;color: var(--azul-bancario);}
+
+.faq-card.active .faq-answer {
+    max-height: 200px; /* Permite expandirse */
+}
+
+.faq-answer p {padding: 0 25px 25px;color: #64748b;line-height: 1.6;font-size: 0.95rem;margin: 0;}
+/* FOOTER CIRCLES (ORIGINAL STYLE) */
+.main-footer { background: var(--azul-bancario); padding: 50px 5%; color: white; text-align: center; }
+.contact-icons { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; }
 .icon-circle { width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s; }
+.icon-circle:hover { background: var(--azul-electrico); transform: translateY(-5px); }
 .contact-link { text-decoration: none; color: white; font-size: 0.8rem; }
-.icon-circle:hover { background: var(--azul-electrico); transform: scale(1.1); }
 
 /* MODALES */
-.modal { 
-    display: none; 
-    position: fixed; 
-    z-index: 9999; /* Subimos el valor para que nada lo tape */
-    left: 0; 
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: rgba(0,0,0,0.8); 
-    align-items: center; 
-    justify-content: center; 
-    backdrop-filter: blur(5px); 
-}
-.modal-content { background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 400px; position: relative; }
+.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+.modal-content { background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 450px; position: relative; }
 .close { position: absolute; right: 20px; top: 10px; font-size: 2rem; cursor: pointer; }
+/* DISEÑO DE LA TABLA DEL SIMULADOR */
+.legal-footer {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 1REM;
+}
+
+.legal-footer p {
+    font-size: 0.65rem;
+    color: #9facbe;
+    line-height: 1.4;
+    text-align: center;
+}
+.legal-footer strong {
+    color: var(--azul-bancario); /* Usa tu variable de color azul oscuro */
+}
+.calculator-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    max-width: 450px; /* Ancho reducido para estética */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.calculator-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: var(--gris-claro);
+}
+.table-container {margin-top: 10px;width: 50%;}
+
+
+.calculator-section { padding: 60px 5%;background-color: var(--gris-suave);display: flex;justify-content: center;}
+
+.calculator-card {
+    background: white;padding: 40px;border-radius: 25px;box-shadow: 0 20px 50px rgba(10, 42, 91, 0.1);max-width: 600px;width: 100%; text-align: center;}
+
+.calculator-card h2 { text-align:center; color:var(--azul-bancario);margin-bottom: 25px;font-weight: 900;}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 25px;
+}
+
+.input-wrapper label {display: block; font-weight: 700;color: var(--azul-brillante);margin-bottom: 10px;text-align: center;margin: auto;}
+
+.currency-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.currency-input:focus-within {border-color: var(--azul-electrico);}
+
+.currency-input input {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    width: 100%;
+    text-align: center; /* Centra el número que escribe el usuario */
+    font-weight: bold;
+    outline: none;
+}
+
+.legal-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    width: 100%;
+}
+.premium-table {
+    width: 100%;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+.premium-table th, .premium-table td {
+    padding: 10px 5px;
+    text-align: center;
+    
+}
+.res-val {color: var(--azul-electrico);font-weight: 900 !important;font-size: 1.1rem;}
+
+.premium-table tr:last-child td {border-bottom: none;}
+/* Tablets (menos de 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila el logo sobre los links */
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Letra un poco más pequeña en tablets */
+    }
+}
+
+/* Teléfonos (menos de 480px) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para que no se amontonen */
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-empleo {
+        grid-column: span 2; /* El botón de empleo ocupa todo el ancho */
+        margin-top: 5px;
+    }
+}
