@@ -20,28 +20,62 @@
             <li><a href="#reclutamiento" class="btn-empleo">Bolsa de Empleo</a></li>
         </ul>
     </nav>
+<div id="modal-policia" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-policia')">&times;</span>
+            <h2>Requisitos GEM</h2>
+            <ul>
+                <li>Identificación Oficial (INE)</li>
+                <li>Últimos dos talones de pago</li>
+                <li>Comprobante de domicilio</li>
+            </ul>
+        </div>
+    </div>
 
+    <div id="modal-profesor" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
+            <h2>Requisitos SNTE</h2>
+            <ul>
+                <li>INE vigente</li>
+                <li>Recibo de Nómina reciente</li>
+                <li>Constancia de servicio</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-pensionado" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
+            <h2>Requisitos IMSS Pensionados</h2>
+            <ul>
+                <li>INE</li>
+                <li>Correo Electrónico</li>
+                <li>Estado de Cuenta Bancario (donde recibe la pensión)</li>
+            </ul>
+        </div>
+    </div>
     <header class="hero" id="inicio">
         <h1>Créditos inmediatos para quienes mueven al país</h1>
-        <p class="hero-sub">Selecciona tu perfil para ver requisitos o contactanos por beneficios</p>
+        <p class="hero-sub">Selecciona tu perfil para ver requisitos o cotiza en nuestro simulador</p>
         
         <div class="targets-container">
             <div class="card" onclick="openModal('modal-policia')">
                 <div class="badge">Gobierno del Estado de México</div>
                 <h2>Línea de Honor</h2>
-                <p>Aprobación inmediata y tasas preferenciales para servidores públicos.</p>
+                <p>Tasa desde 36.00% anual. CAT 44.1%. Aprobación inmediata.</p>
                 <span class="more-info">+ Ver requisitos</span>
             </div>
             <div class="card" onclick="openModal('modal-profesor')">
-                <div class="badge">SNTE- Educación SNTE</div>
+                <div class="badge">SNTE - Educación</div>
                 <h2>Plan Sindical</h2>
-                <p>Financiamos tus metas con descuento directo de nómina para docentes.</p>
+                <p>Tasa fija de 53.54%. CAT 71.2%. Descuento vía nómina.</p>
                 <span class="more-info">+ Ver requisitos</span>
             </div>
             <div class="card" onclick="openModal('modal-pensionado')">
-                <div class="badge">IMSS pensionados y jubilados</div>
+                <div class="badge">IMSS Pensionados</div>
                 <h2>Oro Retiro</h2>
-                <p>Préstamos ajustados a tu mesada pensional hasta los 85 años de edad.</p>
+                <p>La tasa más baja: 32.00%. CAT 37.1%. Hasta los 85 años.</p>
                 <span class="more-info">+ Ver requisitos</span>
             </div>
         </div>
@@ -188,32 +222,7 @@
         <p class="copy">&copy; 2026 BanCredit Institucional.</p>
     </footer>
 
-   <div id="modal-policia" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-policia')">&times;</span>
-            <h2>Requisitos Gobierno del Estado de Mexico</h2>
-            <p><li>INE</li><li>Dos recibos de nómina</li> <li>Estado de cuenta bancario</li></p>
-        </div>
-    </div>
-
-    <div id="modal-profesor" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
-            <h2>Requisitos SNTE</h2>
-            <p><li>Recibo de Nomina</li>
-            <li>INE</li></p>
-        </div>
-    </div>
-
-    <div id="modal-pensionado" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
-            <h2>Requisitos IMSS pensionados y jubilados </h2>
-            <p><li>INE</li>
-            <li>Correo Electronico</li>
-            <li>Estado de Cuenta Bancario</li></p>
-        </div>
-    </div>
+   
 
     
 
@@ -252,4 +261,47 @@ function updateCalc() {
 }
 </script>
 </body>
+<script>
+    // FUNCIÓN PARA ABRIR MODALES
+    function openModal(id) {
+        const targetModal = document.getElementById(id);
+        if (targetModal) {
+            targetModal.style.display = "flex";
+        }
+    }
+
+    // FUNCIÓN PARA CERRAR MODALES
+    function closeModal(id) {
+        const targetModal = document.getElementById(id);
+        if (targetModal) {
+            targetModal.style.display = "none";
+        }
+    }
+
+    // CERRAR SI HACEN CLIC FUERA DEL CUADRO BLANCO
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+
+    // LÓGICA DE LA CALCULADORA (Valores Reales PDF)
+    function updateCalc() {
+        const monto = parseFloat(document.getElementById('monto').value);
+        const fmt = new Intl.NumberFormat('es-MX', { 
+            style: 'currency', currency: 'MXN', minimumFractionDigits: 0 
+        });
+
+        if (monto > 0) {
+            // Factores basados en quincenas/meses de los PDF
+            document.getElementById('res-poli').innerText = fmt.format(monto * 0.0309); 
+            document.getElementById('res-prof').innerText = fmt.format(monto * 0.0554);
+            document.getElementById('res-pension').innerText = fmt.format(monto * 0.0464);
+        } else {
+            document.getElementById('res-poli').innerText = "$ 0";
+            document.getElementById('res-prof').innerText = "$ 0";
+            document.getElementById('res-pension').innerText = "$ 0";
+        }
+    }
+</script>
 </html>
