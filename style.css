@@ -214,4 +214,5 @@ text-align: center;margin-bottom: 50px;color: var(--azul-bancario);}
         grid-column: span 2; /* El botón de empleo ocupa todo el ancho */
         margin-top: 5px;
     }
+    .premium-table{display: flex;}
 }
