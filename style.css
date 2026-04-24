@@ -227,20 +227,26 @@ text-align: center;margin-bottom: 50px;color: var(--azul-bancario);}
     table-layout: auto; /* Permite que las columnas se ajusten al contenido */
 }
 
-/* Ajustes específicos para celulares */
-@media (max-width: 480px) {
+
     .premium-table th, 
     .premium-table td {
-        padding: 8px 4px; /* Reduce el espacio interno */
-        font-size: 0.75rem; /* Letra un poco más pequeña */
+        padding: 8px 3px !important; /* Espaciado mínimo entre columnas */
+        word-break: break-word; /* Rompe palabras si son muy largas */
     }
 
     .res-val {
-        font-size: 0.9rem !important; /* Ajusta el tamaño del número calculado */
+        font-size: 0.85rem !important;
+        white-space: nowrap; /* Evita que el signo $ se separe del número */
     }
 
-    .calculator-card {
-        padding: 15px; /* Reduce el margen interno de la tarjeta para ganar espacio */
+   .calculator-card {
+        padding: 15px 10px !important;
+        width: 95% !important;
+        margin: 20px auto;
     }
-}
+    .currency-input {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 15px;
+    }
 }
