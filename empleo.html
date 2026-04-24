@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn-email {
+    background-color: #475569; /* Un gris profesional */
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.btn-email:hover {
+    background-color: #1e293b;
+}
+ /* Contenedor principal: Cambiamos a una sola columna centrada */
+.folletos-grid {
+    display: flex;
+    flex-direction: column; /* Alinea uno debajo del otro */
+    align-items: center;    /* Centra las tarjetas */
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+/* Control de la Tarjeta */
+.folleto-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 500px; /* Controla qué tan ancha se ve la tarjeta */
+}
+
+/* Ajuste de las Imágenes */
+.folleto-card img {
+    width: 100%;          /* Que ocupe todo el ancho de la tarjeta */
+    height: auto;        /* Altura fija para que todas sean iguales */
+    object-fit: cover;    /* Recorta la imagen para que no se deforme */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.folleto-card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-wa {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    margin: 10px 0;
+}
+
+.btn-fb {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    
+} 
+img{
+    width: 100%;
+    height: auto;
+}
+h2 ,p{
+    text-align: center;
+}
+</style>
+<body>
+    <section class="instrucciones-container">
+    <h2>Instrucciones de Registro</h2>
+    <p>Selecciona el perfil que mas te identifica y contactanos!</p>
+
+    <div class="folletos-grid">
+        <div class="folleto-card">
+            <img src="Gemini_Generated_Image_wu2s5pwu2s5pwu2s.png" alt="Instrucciones GEM">
+            <h3>¿No tienes experiencia o ya has trabajado antes?</h3>
+            <div class="btn-group">
+                <a href="https://wa.me/+525566824358?text=Hola,%20busco%20información%20sobre%20%20el puesto de trabajo sobre." class="btn-wa">Contactar WhatsApp</a>
+                <a href="https://m.me/100064029103527" class="btn-fb">Ver en Facebook</a>
+                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20BanCredit&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre el puesto de trabajo, no tengo experiencia en" class="btn-email">Enviar Solicitud por Correo</a>
+            </div>
+        </div>
+
+        </div>
+        <div class="folletos-grid">
+        <div class="folleto-card">
+            <img src="Gemini_Generated_Image_nri6kynri6kynri6.png" alt="Instrucciones GEM">
+            <h3>Buscamos personal con Experiencia</h3>
+            <div class="btn-group">
+                <a href="https://wa.me/+525566824358?text=Hola,%20busco%20información%20sobre%20Línea%20de%20Honor" class="btn-wa">Contactar WhatsApp</a>
+                <a href="https://facebook.com/TuPagina" class="btn-fb">Ver en Facebook</a>
+                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20BanCredit&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre el puesto de trabajo, tengo experiencia en" class="btn-email">
+    Enviar Solicitud por Correo
+</a>
+            </div>
+        </div>
+
+        </div>
+</section>
+</body>
+</html>
