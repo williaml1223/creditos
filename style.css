@@ -80,6 +80,7 @@ body { background: var(--blanco); overflow-x: hidden; }
     margin-top: 20px; /* Espacio para que no choque con la sección anterior */
     display: flex;
     flex-direction: column;
+    object-fit: cover;
 }
 
 .card:hover {
@@ -94,13 +95,24 @@ body { background: var(--blanco); overflow-x: hidden; }
     overflow: hidden;
     position: relative;
 }
-
+/* Control de imágenes dentro de las tarjetas */
 .card-header img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    height: 180px; /* Altura fija para que todas las tarjetas se vean parejas */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
     display: block;
 }
+
+/* Ajuste del contenedor de tarjetas para mejor respuesta */
+.targets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 /* Reposicionamiento del Badge sobre la imagen */
 .card .badge {
@@ -321,6 +333,39 @@ text-align: center;margin-bottom: 50px;color: var(--azul-bancario);}
 
 /* Teléfonos (menos de 480px) */
 @media (max-width: 480px) {
+    /* Ajustes para Tablets y Pantallas Medianas */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 2rem; }
+    .targets-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    }
+}
+
+/* Ajustes para Celulares (Pantallas pequeñas) */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+    }
+
+    .targets-container {
+        grid-template-columns: 1fr; /* Una sola columna en celulares */
+        padding: 10px;
+    }
+
+    .card-header img {
+        height: 150px; /* Un poco más pequeña en celular para ahorrar espacio */
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
+}
     .logo {
         font-size: 1.2rem;
     }
