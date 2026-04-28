@@ -26,13 +26,11 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-policia')">&times;</span>
             <h2>Requisitos GEM</h2>
-            <div>
-                <ul>
-                    <li>Identificación Oficial (INE)</li>
-                    <li>Últimos dos talones de pago</li>
-                    <li>Comprobante de domicilio</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Identificación Oficial (INE)</li>
+                <li>Últimos dos talones de pago</li>
+                <li>Comprobante de domicilio</li>
+            </ul>
         </div>
     </div>
 
@@ -40,13 +38,11 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
             <h2>Requisitos SNTE</h2>
-            <div>
-                <ul>
-                    <li>INE vigente</li>
-                    <li>Recibo de Nómina reciente</li>
-                    <li>Constancia de servicio</li>
-                </ul>
-            </div>
+            <ul>
+                <li>INE vigente</li>
+                <li>Recibo de Nómina reciente</li>
+                <li>Constancia de servicio</li>
+            </ul>
         </div>
     </div>
 
@@ -54,13 +50,11 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
             <h2>Requisitos IMSS Pensionados</h2>
-            <div>
-                <ul>
-                    <li>INE</li>
-                    <li>Correo Electrónico</li>
-                    <li>Estado de Cuenta Bancario (donde recibe la pensión)</li>
-                </ul>
-            </div>
+            <ul>
+                <li>INE</li>
+                <li>Correo Electrónico</li>
+                <li>Estado de Cuenta Bancario</li>
+            </ul>
         </div>
     </div>
 
@@ -113,7 +107,6 @@
     <section class="calculator-section" id="servicios">
         <div class="calculator-card">
             <h2>Simulador de Crédito</h2>
-            
             <div class="input-wrapper">
                 <label>Monto a solicitar:</label>
                 <div class="currency-input">
@@ -121,7 +114,6 @@
                     <input type="number" id="monto" placeholder="Ej: 50000" oninput="updateCalc()">
                 </div>
             </div>
-
             <div class="table-container">
                 <table class="premium-table">
                     <thead>
@@ -136,19 +128,19 @@
                         <tr>
                             <td>Sector Salud / Policía (GOBMEX)</td>
                             <td>36.00%</td>
-                            <td id="cat-poli">44.1%</td>
+                            <td>44.1%</td>
                             <td id="res-poli" class="res-val">$ 0</td>
                         </tr>
                         <tr>
                             <td>Educación (SNTE)</td>
                             <td>53.54%</td>
-                            <td id="cat-prof">71.2%</td>
+                            <td>71.2%</td>
                             <td id="res-prof" class="res-val">$ 0</td>
                         </tr>
                         <tr>
                             <td>Pensionados IMSS</td>
                             <td>32.00%</td>
-                            <td id="cat-pension">37.1%</td>
+                            <td>37.1%</td>
                             <td id="res-pension" class="res-val">$ 0</td>
                         </tr>
                     </tbody>
@@ -227,7 +219,7 @@
                 <div class="icon-circle">☏</div>
                 <p>Llamar</p>
             </a>
-            <a href="https://wa.me/525566824358?text=Hola%20quiero%20solicitar%20información%20sobre%20un%20crédito" target="_blank" class="contact-link">
+            <a href="https://wa.me/525566824358" target="_blank" class="contact-link">
                 <div class="icon-circle highlight">💬</div>
                 <p>WhatsApp</p>
             </a>
@@ -236,7 +228,7 @@
     </footer>
 
     <script>
-        // Manejo de Modales
+        // MANEJO DE MODALES
         function openModal(id) { 
             const modal = document.getElementById(id);
             if(modal) modal.style.display = "flex"; 
@@ -247,10 +239,12 @@
         }
         
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) event.target.style.display = "none";
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
         }
 
-        // Acordeón FAQ
+        // ACORDEÓN FAQ
         function toggleFaq(element) {
             const card = element.parentElement;
             const icon = element.querySelector('.faq-icon');
@@ -258,13 +252,12 @@
             icon.textContent = card.classList.contains('active') ? '−' : '+';
         }
 
-        // Calculadora Unificada
+        // CALCULADORA
         function updateCalc() {
             const monto = parseFloat(document.getElementById('monto').value);
             const fmt = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 });
 
             if (monto > 0) {
-                // Factores basados en tus especificaciones anteriores
                 document.getElementById('res-poli').innerText = fmt.format(monto * 0.0309); 
                 document.getElementById('res-prof').innerText = fmt.format(monto * 0.0554);
                 document.getElementById('res-pension').innerText = fmt.format(monto * 0.0464);
@@ -274,16 +267,28 @@
                 document.getElementById('res-pension').innerText = "$ 0";
             }
         }
-        import { SpeedInsights } from "@vercel/speed-insights/react";
-
-function App() {
-  return (
-    <div>
-      {/* Todo el contenido de tu landing de créditos */}
-      <SpeedInsights />
-    </div>
-  );
-}
     </script>
+    <script>
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = "flex"; // Usamos flex para centrarlo
+        }
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Cerrar si el usuario hace clic fuera del contenido blanco
+    window.onclick = function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
