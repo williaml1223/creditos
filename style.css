@@ -24,7 +24,129 @@ body { background: var(--blanco); overflow-x: hidden; }
 .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
 .nav-links a { color: white; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
 .btn-empleo { background: var(--azul-electrico); padding: 8px 15px; border-radius: 5px; }
+/* --- REESTRUCTURACIÓN DE TARJETAS PARA INCLUIR IMÁGENES --- */
+/* Estilo para el mensaje flotante tipo suscripción */
+.featured-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Eleva el mensaje sobre la línea divisoria */
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
 
+/* Colores específicos */
+.badge-policia { background: #2196F3; }
+.badge-profesor { background: #4CAF50; }
+.badge-pensionado { background: #FF9800; }
+
+/* Ajuste necesario en card-body para que el badge respete la posición absoluta */
+.card-body {
+    position: relative; /* Esto es clave para que el top: 0 funcione bien */
+    padding: 25px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Permitir que los badges sobresalgan */
+.card {
+    overflow: visible !important;
+}
+
+/* Espaciado para que el mensaje no quede pegado al borde del contenedor padre */
+#servicios {
+    padding-top: 50px;
+}
+/* Ajuste a la tarjeta base */
+.card {
+    background: white;
+    padding: 0; /* Eliminamos el padding general para que la imagen llegue al borde */
+    border-radius: 20px;
+    color: #1a2a40;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: visible !important; /* Permite que el mensaje 'flote' arriba */
+    margin-top: 20px; /* Espacio para que no choque con la sección anterior */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Contenedor de la imagen y badge (similar al ejemplo) */
+.card-header {
+    
+    width: 100%;
+    height: 180px; /* Altura fija para la imagen */
+    overflow: hidden;
+    position: relative;
+}
+
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    display: block;
+}
+
+/* Reposicionamiento del Badge sobre la imagen */
+.card .badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para legibilidad */
+    color: var(--azul-electrico);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    margin: 0; /* Reset margin */
+    z-index: 10;
+}
+
+/* Contenedor de texto con padding (el padding original de la tarjeta) */
+.card-body {
+    padding: 25px 30px 30px; /* Padding interno para el texto */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Ajustes menores de texto */
+.card-body h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--azul-bancario);
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #4a5568;
+    flex-grow: 1; /* Empuja el '+ Ver requisitos' al fondo */
+}
+
+.more-info {
+    color: var(--azul-electrico);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: auto; /* Se alinea al fondo del card-body */
+}
 /* HERO */
 .hero {
     padding: 100px 5%;

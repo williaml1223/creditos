@@ -68,24 +68,47 @@
         <h1>Créditos inmediatos para quienes mueven al país</h1>
         <p class="hero-sub">Selecciona tu perfil para ver requisitos o cotiza en nuestro simulador</p>
         
-        <div class="targets-container">
+       <div class="targets-container">
             <div class="card" onclick="openModal('modal-policia')">
-                <div class="badge">Gobierno del Estado de México</div>
-                <h2>Línea de Honor</h2>
-                <p>Tasa desde 36.00% anual. CAT 44.1%. Aprobación inmediata.</p>
-                <span class="more-info">+ Ver requisitos</span>
+                <div class="card-header">
+                    <img src="mode1.png" alt="Oficial de Policía GEM">
+                    <div class="badge">Gobierno del Estado de México</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-policia">¡Respuesta Inmediata!</div>
+                    <h2>Línea de Honor</h2>
+                    <p>Tasa desde 36.00% anual. CAT 44.1%. Aprobación inmediata.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
             </div>
+
             <div class="card" onclick="openModal('modal-profesor')">
-                <div class="badge">SNTE - Educación</div>
-                <h2>Plan Sindical</h2>
-                <p>Tasa fija de 53.54%. CAT 71.2%. Descuento vía nómina.</p>
-                <span class="more-info">+ Ver requisitos</span>
+                <div class="card-header">
+                    <img src="mode2.png" alt="Profesor de Educación">
+                    <div class="badge">SNTE - Educación</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-profesor">Especial Magisterio</div>
+                    <h2>Plan Sindical</h2>
+                    <p>Tasa fija de 53.54%. CAT 71.2%. Descuento vía nómina.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
             </div>
+
             <div class="card" onclick="openModal('modal-pensionado')">
-                <div class="badge">IMSS Pensionados</div>
-                <h2>Oro Retiro</h2>
-                <p>La tasa más baja: 32.00%. CAT 37.1%. Hasta los 85 años.</p>
-                <span class="more-info">+ Ver requisitos</span>
+                <div class="card-header">
+                    <img src="mode3.png" alt="Pensionado IMSS">
+                    <div class="badge">IMSS Pensionados</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-pensionado">Tasa Preferencial</div>
+                    <h2>Oro Retiro</h2>
+                    <p>La tasa más baja: 32.00%. CAT 37.1%. Hasta los 85 años.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
             </div>
         </div>
     </header>
@@ -199,19 +222,260 @@
             </div>
         </div>
     </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creidito x nomina | Banca Institucional Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="logo">Credi-Nomina</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Simulador</a></li>
+            <li><a href="#faq">Ayuda</a></li>
+            <li><a href="empleo.html" class="btn-empleo">Bolsa de Empleo</a></li>
+        </ul>
+    </nav>
+<div id="modal-policia" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-policia')">&times;</span>
+            <h2>Requisitos GEM</h2>
+            <div>
+                <ul>
+                <li>Identificación Oficial (INE)</li>
+                <li>Últimos dos talones de pago</li>
+                <li>Comprobante de domicilio</li>
+            </ul>
+            </div>
+           
+        </div>
+    </div>
 
-    <script>
-        // Función para el acordeón de FAQ
+    <div id="modal-profesor" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
+            <h2>Requisitos SNTE</h2>
+            <div>
+                 <ul>
+                <li>INE vigente</li>
+                <li>Recibo de Nómina reciente</li>
+                <li>Constancia de servicio</li>
+            </ul>
+            </div>
+         
+        </div>
+    </div>
+
+    <div id="modal-pensionado" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
+            <h2>Requisitos IMSS Pensionados</h2>
+            <div>
+                <ul>
+                <li>INE</li>
+                <li>Correo Electrónico</li>
+                <li>Estado de Cuenta Bancario (donde recibe la pensión)</li>
+            </ul>
+            </div>
+
+        </div>
+    </div>
+    <header class="hero" id="inicio">
+        <h1>Créditos inmediatos para quienes mueven al país</h1>
+        <p class="hero-sub">Selecciona tu perfil para ver requisitos o cotiza en nuestro simulador</p>
+        
+       <div class="targets-container">
+            <div class="card" onclick="openModal('modal-policia')">
+                <div class="card-header">
+                    <img src="mode1.png" alt="Oficial de Policía GEM">
+                    <div class="badge">Gobierno del Estado de México</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-policia">¡Respuesta Inmediata!</div>
+                    <h2>Línea de Honor</h2>
+                    <p>Tasa desde 36.00% anual. CAT 44.1%. Aprobación inmediata.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-profesor')">
+                <div class="card-header">
+                    <img src="mode2.png" alt="Profesor de Educación">
+                    <div class="badge">SNTE - Educación</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-profesor">Especial Magisterio</div>
+                    <h2>Plan Sindical</h2>
+                    <p>Tasa fija de 53.54%. CAT 71.2%. Descuento vía nómina.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('modal-pensionado')">
+                <div class="card-header">
+                    <img src="mode3.png" alt="Pensionado IMSS">
+                    <div class="badge">IMSS Pensionados</div>
+                </div>
+                <div class="card-body">
+                    <div class="featured-badge badge-pensionado">Tasa Preferencial</div>
+                    <h2>Oro Retiro</h2>
+                    <p>La tasa más baja: 32.00%. CAT 37.1%. Hasta los 85 años.</p>
+                    <div class="badge"></div>
+                    <span class="more-info">+ Ver requisitos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+      <section class="calculator-section" id="servicios">
+    <div class="calculator-card">
+        <h2>Simulador de Crédito</h2>
+        
+        <div class="input-wrapper">
+            <label>Monto a solicitar:</label>
+            <div class="currency-input">
+                <span>$</span>
+                <input type="number" id="monto" placeholder="Ej: 50000" oninput="updateCalc()">
+            </div>
+        </div>
+
+        <div class="table-container">
+           <table class="premium-table">
+    <thead>
+        <tr>
+            <th>Perfil del Cliente</th>
+            <th>Tasa Anual</th>
+            <th>CAT Promedio</th>
+            <th>Pago Mensual</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sector Salud / Policía (GOBMEX)</td>
+            <td>36.00%</td>
+            <td id="cat-poli">44.1%</td>
+            <td id="res-poli" class="res-val">$ 0</td>
+        </tr>
+        <tr>
+            <td>Educación (SNTE)</td>
+            <td>53.54%</td>
+            <td id="cat-prof">71.2%</td>
+            <td id="res-prof" class="res-val">$ 0</td>
+        </tr>
+        <tr>
+            <td>Pensionados IMSS</td>
+            <td>32.00%</td>
+            <td id="cat-pension">37.1%</td>
+            <td id="res-pension" class="res-val">$ 0</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="legal-footer">
+    <p><small><Strong>*CAT (Costo Anual Total)</Strong> informativo para fines de comparación. Datos calculados a un plazo de 24 meses según folletos vigentes de BanCredit.</small></p>
+</div>
+        <div class="legal-footer">
+            <p><strong>* Información Legal:</strong> Tasa de interés ordinaria anual fija. CAT promedio informativo sin IVA. No aplica comisión por apertura ni administración.</p>
+            <p><strong>* Condiciones:</strong> Sujeto a aprobación de crédito. Los plazos y tasas pueden variar según el convenio específico.</p>
+        </div>
+    </div>
+</section>
+    <section id="faq" class="faq-section">
+        <div class="faq-header">
+            <span class="badge-blue">CENTRO DE AYUDA</span>
+            <h2>Preguntas Frecuentes</h2>
+            <p>Todo lo que necesitas saber sobre nuestros créditos institucionales</p>
+        </div>
+
+     <div class="faq-container">
+            <div class="faq-card">
+        <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>¿En cuánto tiempo recibo mi efectivo?</h3>
+        <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+        <p>Una vez aprobada tu solicitud, el depósito se refleja en un máximo de 24 horas directamente en tu cuenta de nómina o pensión.</p>
+        </div>
+</div>
+  <div class="faq-card"> <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>¿Puedo solicitar un nuevo credito, si ya tengo otros prestamos activos?</h3>
+        <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Por supuesto. Realizamos un estudio de tu capacidad actual. Si tu margen de nómina lo permite, brindamos liquidez adicional.</p>
+    </div>
+</div>
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Puedo liquidar mi crédito anticipadamente o adelantar pagos?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>¡Sí! Estamos para servirte y brindarte todo el apoyo que necesitas, puedes comunicarte con nuestro soporte para que orienten.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Dan créditos a clientes en toda la república?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, contamos con procesos automatizados que nos permiten realizar el trámite a distancia de manera digital.</p>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>¿Qué debo hacer para saber si puedo obtener un refinanciamiento?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sólo tienes que enviarnos tu recibo de nómina y nosotros validamos si eres viable para un refinanciamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+        // Manejo de Modales
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        
+        // Cerrar al hacer clic fuera
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) event.target.style.display = "none";
+        }
+
+        // Acordeón FAQ
         function toggleFaq(element) {
             const card = element.parentElement;
             const icon = element.querySelector('.faq-icon');
-            
-            // Cerrar otros si se desea (opcional)
-            // document.querySelectorAll('.faq-card').forEach(c => { if(c !== card) c.classList.remove('active'); });
-
             card.classList.toggle('active');
             icon.textContent = card.classList.contains('active') ? '−' : '+';
+        }
+
+        // Calculadora Unificada
+        function updateCalc() {
+            const monto = parseFloat(document.getElementById('monto').value);
+            const fmt = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 });
+
+            if (monto > 0) {
+                document.getElementById('res-poli').innerText = fmt.format(monto * 0.0309); 
+                document.getElementById('res-prof').innerText = fmt.format(monto * 0.0554);
+                document.getElementById('res-pension').innerText = fmt.format(monto * 0.0464);
+            } else {
+                document.querySelectorAll('.res-val').forEach(el => el.innerText = "$ 0");
+            }
         }
     </script>
     
