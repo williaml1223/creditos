@@ -1,133 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bolsa de Empleo | Credi-Nomina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%); min-height: 100vh; }
+        
+        .header {
+            background: linear-gradient(135deg, #0a2a5b, #1e4f9a);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        
+        .folletos-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 5%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .folleto-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 25px;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+        .folleto-card:hover { transform: translateY(-5px); }
+        
+        .folleto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .folleto-card h3 { color: #0a2a5b; margin-bottom: 15px; font-size: 1.2rem; }
+        
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .btn-wa {
+            background: linear-gradient(135deg, #075E54, #128C7E);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(7,94,84,0.3); }
+        
+        .btn-fb {
+            background: linear-gradient(135deg, #1877f2, #0d5bd4);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-fb:hover { transform: translateY(-2px); }
+        
+        .btn-email {
+            background: linear-gradient(135deg, #475569, #334155);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-email:hover { transform: translateY(-2px); }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 20px auto 40px;
+            color: #0a2a5b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { color: #D4AF37; }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 480px) {
+            .folleto-card img { height: 180px; }
+            .folleto-card h3 { font-size: 1rem; }
+        }
+    </style>
 </head>
-<style>
-    .btn-email {
-    background-color: #475569; /* Un gris profesional */
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 700;
-    transition: background 0.3s ease;
-}
-
-.btn-email:hover {
-    background-color: #1e293b;
-}
- /* Contenedor principal: Cambiamos a una sola columna centrada */
-.folletos-grid {
-    display: flex;
-    flex-direction: column; /* Alinea uno debajo del otro */
-    align-items: center;    /* Centra las tarjetas */
-    gap: 30px;
-    padding: 40px 5%;
-}
-
-/* Control de la Tarjeta */
-.folleto-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    text-align: center;
-    padding: 25px;
-    transition: transform 0.3s;
-    width: 100%;
-    max-width: 500px; /* Controla qué tan ancha se ve la tarjeta */
-}
-
-/* Ajuste de las Imágenes */
-.folleto-card img {
-    width: 100%;          /* Que ocupe todo el ancho de la tarjeta */
-    height: auto;        /* Altura fija para que todas sean iguales */
-    object-fit: cover;    /* Recorta la imagen para que no se deforme */
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-.folleto-card:hover {
-    transform: translateY(-5px);
-}
-
-.btn-wa {
-    background-color: #25d366;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: block;
-    margin: 10px 0;
-}
-
-.btn-fb {
-    background-color: #1877f2;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: block;
-    
-} 
-img{
-    width: 100%;
-    height: auto;
-}
-h2 ,p{
-    text-align: center;
-}
-</style>
 <body>
-   <section class="instrucciones-container">
-    <h2>Instrucciones de Registro</h2>
-    <p>Selecciona el perfil que más te identifica y ¡contáctanos!</p>
-
-    <div class="folletos-grid">
-        <div class="folleto-card">
-            <img src="Gemini_Generated_Image_wu2s5pwu2s5pwu2s.png" alt="Instrucciones GEM">
-            <h3>¿No tienes experiencia o ya has trabajado antes?</h3>
-            <div class="btn-group">
-                <a href="https://wa.me/+525566824358?text=Hola,%20busco%20información%20sobre%20el%20puesto%20de%20trabajo." class="btn-wa">Contactar WhatsApp</a>
-                
-                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" rel="noopener noreferrer" class="btn-fb">Ver en Facebook</a>
-                
-                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20BanCredit&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre el puesto de trabajo, no tengo experiencia en" class="btn-email">Enviar Solicitud por Correo</a>
-            </div>
-        </div>
+    <div class="header">
+        <h1>📢 Bolsa de Empleo</h1>
+        <p>Selecciona el perfil que más te identifica y ¡contáctanos!</p>
     </div>
 
     <div class="folletos-grid">
         <div class="folleto-card">
-            <img src="Gemini_Generated_Image_nri6kynri6kynri6.png" alt="Instrucciones GEM">
-            <h3>Buscamos personal con Experiencia</h3>
+            <img src="Gemini_Generated_Image_wu2s5pwu2s5pwu2s.png" alt="Sin experiencia" onerror="this.src='https://placehold.co/400x200/0a2a5b/white?text=Sin+Experiencia'">
+            <h3>🚀 ¿No tienes experiencia o ya has trabajado antes?</h3>
             <div class="btn-group">
-                <a href="https://wa.me/+525566824358?text=Hola,%20busco%20información%20sobre%20trabajo%20de%20personal" class="btn-wa">Contactar WhatsApp</a>
-                
-                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" rel="noopener noreferrer" class="btn-fb">Ver en Facebook</a>
-                
-                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20BanCredit&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre el puesto de trabajo, tengo experiencia en" class="btn-email">Enviar Solicitud por Correo</a>
+                <a href="https://wa.me/525566824358?text=Hola,%20busco%20información%20sobre%20el%20puesto%20de%20trabajo%20sin%20experiencia" class="btn-wa" target="_blank">📱 Contactar WhatsApp</a>
+                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" class="btn-fb">📘 Ver en Facebook</a>
+                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre%20el%20puesto%20de%20trabajo" class="btn-email">✉️ Enviar Solicitud por Correo</a>
+            </div>
+        </div>
+
+        <div class="folleto-card">
+            <img src="Gemini_Generated_Image_nri6kynri6kynri6.png" alt="Con experiencia" onerror="this.src='https://placehold.co/400x200/0a2a5b/white?text=Con+Experiencia'">
+            <h3>⭐ Buscamos personal con Experiencia</h3>
+            <div class="btn-group">
+                <a href="https://wa.me/525566824358?text=Hola,%20tengo%20experiencia%20y%20busco%20información%20sobre%20trabajo" class="btn-wa" target="_blank">📱 Contactar WhatsApp</a>
+                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" class="btn-fb">📘 Ver en Facebook</a>
+                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20Con%20Experiencia&body=Hola,%20tengo%20experiencia%20en%20el%20sector%20y%20me%20gustaría%20recibir%20más%20información" class="btn-email">✉️ Enviar Solicitud por Correo</a>
+            </div>
+        </div>
+
+        <div class="folleto-card">
+            <img src="WhatsApp Image 2026-04-27 at 4.03.17 PM.jpeg" alt="Brokers" onerror="this.src='https://placehold.co/400x200/0a2a5b/white?text=Brokers'">
+            <h3>🤝 Buscamos socios de negocios / BROKERS</h3>
+            <div class="btn-group">
+                <a href="https://wa.me/525566824358?text=Hola,%20soy%20broker%20y%20busco%20información%20sobre%20socios%20de%20negocios" class="btn-wa" target="_blank">📱 Contactar WhatsApp</a>
+                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" class="btn-fb">📘 Ver en Facebook</a>
+                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20Broker&body=Hola,%20soy%20broker%20y%20me%20gustaría%20recibir%20más%20información%20sobre%20socios%20de%20negocios" class="btn-email">✉️ Enviar Solicitud por Correo</a>
             </div>
         </div>
     </div>
 
-    <div class="folletos-grid">
-        <div class="folleto-card">
-            <img src="WhatsApp Image 2026-04-27 at 4.03.17 PM.jpeg" alt="Instrucciones GEM">
-            <h3>Buscamos socios de negocios / BROKERS</h3>
-            <div class="btn-group">
-                <a href="https://wa.me/+525566824358?text=Hola,%20busco%20información%20sobre%20el%20puesto%20de%20brokers" class="btn-wa">Contactar WhatsApp</a>
-                
-                <a href="https://www.facebook.com/people/Créditos-por-Nómina/100064029103527/" target="_blank" rel="noopener noreferrer" class="btn-fb">Ver en Facebook</a>
-                
-                <a href="mailto:mary_rosass@outlook.com?subject=Solicitud%20de%20Empleo%20-%20BanCredit&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre el puesto de trabajo, tengo experiencia en" class="btn-email">Enviar Solicitud por Correo</a>
-            </div>
-        </div>
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+    <div class="footer">
+        <p>&copy; 2025 Credi-Nomina Institucional. Todos los derechos reservados.</p>
     </div>
-</section>
 </body>
 </html>

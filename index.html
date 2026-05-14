@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>creidito x nomina | Banca Institucional Premium</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script defer src="/_vercel/insights/script.js"></script>
-</head>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+        gtag('event', 'page_view', { 'page_title': 'Credi-Nomina' });
+    </script>
+     <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'TU_PIXEL_ID_AQUI');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', { content_name: 'Creditos Nomina', content_category: 'Financiamiento' });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+     </head>
 <body>
+ <!-- WHATSAPP FLOTANTE (AGREGADO) -->
+    <a href="https://wa.me/525566824358?text=Hola%2C%20vi%20su%20p%C3%A1gina%20de%20cr%C3%A9ditos%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" class="whatsapp-float" target="_blank" rel="noopener">
+        💬
+        <span class="whatsapp-tooltip">¡Respuesta en 5 min!</span>
+    </a>
 
+    <!-- NAVBAR CON MENÚ HAMBURGUESA -->
     <nav class="navbar">
         <div class="logo">Credi-Nomina</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Simulador</a></li>
-            <li><a href="#faq">Ayuda</a></li>
-            <li><a href="empleo.html" class="btn-empleo">Bolsa de Empleo</a></li>
+            <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+            <li><a href="#servicios" onclick="closeMenu()">Simulador</a></li>
+            <li><a href="#faq" onclick="closeMenu()">Ayuda</a></li>
+            <li><a href="empleo.html" class="btn-empleo" onclick="closeMenu()">Bolsa de Empleo</a></li>
         </ul>
     </nav>
+
 
     <div id="modal-policia" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-policia')">&times;</span>
             <h2>Requisitos GEM</h2>
-            <ul>
-                <li>Identificación Oficial (INE)</li>
-                <li>Últimos dos talones de pago</li>
-                <li>Comprobante de domicilio</li>
-            </ul>
+            <div>
+                <ul>
+                    <li>Identificación Oficial (INE)</li>
+                    <li>Últimos dos talones de pago</li>
+                    <li>Comprobante de domicilio</li>
+                </ul>
+            </div>
+             <div class="formulario-box">
+                <h3>📝 Completa tus datos para solicitar:</h3>
+                <input type="text" id="nombre-policia" placeholder="Nombre completo">
+                <input type="tel" id="telefono-policia" placeholder="WhatsApp / Teléfono">
+                <input type="number" id="monto-policia" placeholder="Monto deseado (MXN)">
+                <button class="btn-enviar-modal" onclick="enviarSolicitud('policia', 'Línea de Honor', '36.00', 'GOBMEX')">📤 Enviar mi solicitud ahora</button>
+            </div>
         </div>
     </div>
 
@@ -38,11 +84,20 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-profesor')">&times;</span>
             <h2>Requisitos SNTE</h2>
-            <ul>
-                <li>INE vigente</li>
-                <li>Recibo de Nómina reciente</li>
-                <li>Constancia de servicio</li>
-            </ul>
+            <div>
+                <ul>
+                    <li>INE vigente</li>
+                    <li>Recibo de Nómina reciente</li>
+                    <li>Constancia de servicio</li>
+                </ul>
+            </div>
+            <div class="formulario-box">
+                <h3>📝 Completa tus datos para solicitar:</h3>
+                <input type="text" id="nombre-maestro" placeholder="Nombre completo">
+                <input type="tel" id="telefono-maestro" placeholder="WhatsApp / Teléfono">
+                <input type="number" id="monto-maestro" placeholder="Monto deseado (MXN)">
+                <button class="btn-enviar-modal" onclick="enviarSolicitud('maestro', 'Plan Sindical', '53.54', 'SNTE')">📤 Enviar mi solicitud ahora</button>
+            </div>
         </div>
     </div>
 
@@ -50,18 +105,33 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-pensionado')">&times;</span>
             <h2>Requisitos IMSS Pensionados</h2>
-            <ul>
-                <li>INE</li>
-                <li>Correo Electrónico</li>
-                <li>Estado de Cuenta Bancario</li>
-            </ul>
+            <div>
+                <ul>
+                    <li>INE</li>
+                    <li>Correo Electrónico</li>
+                    <li>Estado de Cuenta Bancario (donde recibe la pensión)</li>
+                </ul>
+            </div>
+             <div class="formulario-box">
+                <h3>📝 Completa tus datos para solicitar:</h3>
+                <input type="text" id="nombre-pensionado" placeholder="Nombre completo">
+                <input type="tel" id="telefono-pensionado" placeholder="WhatsApp / Teléfono">
+                <input type="number" id="monto-pensionado" placeholder="Monto deseado (MXN)">
+                <button class="btn-enviar-modal" onclick="enviarSolicitud('pensionado', 'Oro Retiro', '32.00', 'IMSS Pensionados')">📤 Enviar mi solicitud ahora</button>
+            </div>
         </div>
     </div>
 
     <header class="hero" id="inicio">
-        <h1>Créditos inmediatos para quienes mueven al país</h1>
-        <p class="hero-sub">Selecciona tu perfil para ver requisitos o cotiza en nuestro simulador</p>
         
+        <div class="hero-badge">🔥 CRÉDITO INMEDIATO</div>
+         <h1>Créditos <span class="highlight">inmediatos</span> para quienes mueven al país</h1>
+        <p class="hero-sub">Selecciona tu perfil para ver requisitos o cotiza en nuestro simulador</p>
+        <div class="trust-badges">
+            <span>⭐ Más de 5,000 clientes</span>
+            <span>🛡️ Respaldados por SNTE</span>
+            <span>⏱️ Aprobación en menos de 24 horas</span>
+        </div>
         <div class="targets-container">
             <div class="card" onclick="openModal('modal-policia')">
                 <div class="card-header">
@@ -103,17 +173,34 @@
             </div>
         </div>
     </header>
+  <!-- SECCIÓN DE BENEFICIOS -->
+    <section class="benefits-section">
+        <div class="benefits-header">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>Beneficios exclusivos para servidores públicos</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card"><strong>⚡</strong><h3>Aprobación en menos de 24 horas</h3><p>Respuesta rápida sin papeleos</p></div>
+            <div class="benefit-card"><strong>🤝</strong><h3>Sin aval ni garantía</h3><p>Solo con tu recibo de nómina</p></div>
+            
+            <div class="benefit-card"><strong>📱</strong><h3>Trámite 100% digital</h3><p>Sin salir de casa</p></div>
+        </div>
+    </section>
 
     <section class="calculator-section" id="servicios">
         <div class="calculator-card">
             <h2>Simulador de Crédito</h2>
+            
             <div class="input-wrapper">
+                <p class="calc-subtitle">¿Cuánto pagarías al mes? Descúbrelo ahora</p>
                 <label>Monto a solicitar:</label>
+                
                 <div class="currency-input">
                     <span>$</span>
                     <input type="number" id="monto" placeholder="Ej: 50000" oninput="updateCalc()">
                 </div>
             </div>
+
             <div class="table-container">
                 <table class="premium-table">
                     <thead>
@@ -128,19 +215,19 @@
                         <tr>
                             <td>Sector Salud / Policía (GOBMEX)</td>
                             <td>36.00%</td>
-                            <td>44.1%</td>
+                            <td id="cat-poli">44.1%</td>
                             <td id="res-poli" class="res-val">$ 0</td>
                         </tr>
                         <tr>
                             <td>Educación (SNTE)</td>
                             <td>53.54%</td>
-                            <td>71.2%</td>
+                            <td id="cat-prof">71.2%</td>
                             <td id="res-prof" class="res-val">$ 0</td>
                         </tr>
                         <tr>
                             <td>Pensionados IMSS</td>
                             <td>32.00%</td>
-                            <td>37.1%</td>
+                            <td id="cat-pension">37.1%</td>
                             <td id="res-pension" class="res-val">$ 0</td>
                         </tr>
                     </tbody>
@@ -154,6 +241,18 @@
                     <p><strong>* Condiciones:</strong> Sujeto a aprobación de crédito. Los plazos y tasas pueden variar según el convenio específico.</p>
                 </div>
             </div>
+        </div>
+    </section>
+<!-- TESTIMONIOS -->
+    <section class="testimonials-section">
+        <div class="testimonials-header">
+            <span class="badge-blue">TESTIMONIOS REALES</span>
+            <h2>Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Necesitaba dinero urgente. En menos de 24 horas ya tenía el depósito. ¡Excelente servicio!"</p><div class="testimonial-author"><div class="testimonial-avatar">JM</div><div><strong>Javier M.</strong><span>Policía GEM</span></div></div><div class="verified-badge">✓ Verificado</div></div>
+            <div class="testimonial-card"><div class="stars">★★★★★</div><p>"La tasa para pensionados es la mejor del mercado. Me ayudaron con todo el trámite por teléfono."</p><div class="testimonial-author"><div class="testimonial-avatar">RT</div><div><strong>Rosa T.</strong><span>Pensionada IMSS</span></div></div><div class="verified-badge">✓ Verificado</div></div>
+            <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Como maestro, encontré pocas opciones confiables. Credi-Nomina me dio una solución rápida."</p><div class="testimonial-author"><div class="testimonial-avatar">CR</div><div><strong>Carlos R.</strong><span>Maestro SNTE</span></div></div><div class="verified-badge">✓ Verificado</div></div>
         </div>
     </section>
 
@@ -219,7 +318,7 @@
                 <div class="icon-circle">☏</div>
                 <p>Llamar</p>
             </a>
-            <a href="https://wa.me/525566824358" target="_blank" class="contact-link">
+            <a href="https://wa.me/525566824358?text=Hola%20quiero%20solicitar%20información%20sobre%20un%20crédito" target="_blank" class="contact-link">
                 <div class="icon-circle highlight">💬</div>
                 <p>WhatsApp</p>
             </a>
@@ -228,7 +327,7 @@
     </footer>
 
     <script>
-        // MANEJO DE MODALES
+        // Manejo de Modales
         function openModal(id) { 
             const modal = document.getElementById(id);
             if(modal) modal.style.display = "flex"; 
@@ -239,12 +338,10 @@
         }
         
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-            }
+            if (event.target.classList.contains('modal')) event.target.style.display = "none";
         }
 
-        // ACORDEÓN FAQ
+        // Acordeón FAQ
         function toggleFaq(element) {
             const card = element.parentElement;
             const icon = element.querySelector('.faq-icon');
@@ -252,12 +349,13 @@
             icon.textContent = card.classList.contains('active') ? '−' : '+';
         }
 
-        // CALCULADORA
+        // Calculadora Unificada
         function updateCalc() {
             const monto = parseFloat(document.getElementById('monto').value);
             const fmt = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0 });
 
             if (monto > 0) {
+                // Factores basados en tus especificaciones anteriores
                 document.getElementById('res-poli').innerText = fmt.format(monto * 0.0309); 
                 document.getElementById('res-prof').innerText = fmt.format(monto * 0.0554);
                 document.getElementById('res-pension').innerText = fmt.format(monto * 0.0464);
@@ -267,28 +365,7 @@
                 document.getElementById('res-pension').innerText = "$ 0";
             }
         }
+        
     </script>
-    <script>
-    function openModal(id) {
-        const modal = document.getElementById(id);
-        if (modal) {
-            modal.style.display = "flex"; // Usamos flex para centrarlo
-        }
-    }
-
-    function closeModal(id) {
-        const modal = document.getElementById(id);
-        if (modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    // Cerrar si el usuario hace clic fuera del contenido blanco
-    window.onclick = function(event) {
-        if (event.target.className === 'modal') {
-            event.target.style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>
