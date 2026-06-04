@@ -133,7 +133,44 @@ body { background: var(--blanco); overflow-x: hidden; }
     border-radius: 50px;
 }
 .btn-empleo:hover { background: var(--oro); color: var(--azul-bancario) !important; }
+/* Menú hamburguesa - oculto por defecto en desktop */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+}
 
+/* Estilos para móvil */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: white;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+}
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .menu-icon { display: flex; }
