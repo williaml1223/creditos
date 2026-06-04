@@ -416,6 +416,85 @@ body { background: var(--blanco); overflow-x: hidden; }
 
 /* ========== RESPONSIVE AJUSTES ========== */
 @media (max-width: 768px) {
+    /* Botón hamburguesa */
+    .menu-btn {
+        display: block;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    /* Ocultar el menu-icon viejo si existe */
+    .menu-icon {
+        display: none;
+    }
+    
+    /* Menú lateral que viene DESDE LA DERECHA */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--azul-bancario), #0d355c);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+        padding: 80px 20px 40px;
+        display: flex !important;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+        border-radius: 50px;
+    }
+    
+    .nav-links a:hover {
+        background: rgba(212, 175, 55, 0.2);
+        transform: translateX(-5px);
+    }
+    
+    .btn-empleo {
+        background: var(--oro);
+        color: var(--azul-bancario) !important;
+        margin-top: 10px;
+    }
+    
+    /* Overlay para fondo oscuro al abrir menú */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ajustes de hero y otros en móvil */
     .hero h1 { font-size: 1.8rem; }
     .trust-badges { gap: 10px; }
     .trust-badges span { font-size: 0.7rem; padding: 5px 12px; }
